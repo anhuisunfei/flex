@@ -15,7 +15,7 @@ function handleError(err) {
 gulp.task('browser-sync', ['sass', 'build'], function () {
   browserSync({
     server: {
-      baseDir: 'dist'
+      baseDir: './'
     }
   })
 })
@@ -29,14 +29,14 @@ gulp.task('build', function () {
     .pipe(wrap({
       src: 'src/layout/_layout.html'
     }))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('./'))
 
 })
 
 gulp.task('imagemin', function () {
   gulp.src('src/images/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('./'))
 });
 
 
@@ -46,7 +46,7 @@ gulp.task('sass', function () {
     .pipe(sass()).on('error', handleError)
     .pipe(prefixer())
     .pipe(minify())
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -54,7 +54,7 @@ gulp.task('sass', function () {
 
 gulp.task('copy-assets', function () {
   gulp.src('src/index.html')
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('/'))
 })
 
 gulp.task('watch', function () {
