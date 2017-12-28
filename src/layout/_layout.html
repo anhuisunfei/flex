@@ -22,9 +22,23 @@
         <i class="fa fa-cog"></i>
       </a>
     </header>
-    <nav class="app-siderbar"></nav>
+    <nav class="app-sidebar">
+      <h1>Hello Flex</h1>
+      <a href="index.html">
+        <i class="fa fa-home"></i>
+        Home
+      </a>
+      <a href="cart.html">
+        <i class="fa fa-shopping-cart"></i>
+        Cart
+      </a>
+      <a href="user.html">
+        <i class="fa fa-user"></i>
+        User
+      </a>
+    </nav>
     <div class="content">
-     <%= contents %>
+      <%= contents %>
     </div>
     <footer class="app-footer">
       <a href="index.html">
@@ -41,6 +55,28 @@
       </a>
     </footer>
   </div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+  <script>
+    $(".app-footer a").each(function () {
+      var path = document.location.pathname.split('/');
+      var page = path[path.length - 1];
+      var href = $(this).attr("href");
+      if (href === page) {
+        $(this).addClass("active");
+        return false;
+      }
+    });
+
+    $(".app-sidebar a").each(function () {
+      var path = document.location.pathname.split('/');
+      var page = path[path.length - 1];
+      var href = $(this).attr("href");
+      if (href === page) {
+        $(this).addClass("active");
+        return false;
+      }
+    });
+  </script>
 </body>
 
 </html>

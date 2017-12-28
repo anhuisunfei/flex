@@ -86,25 +86,56 @@ a {
             padding-bottom: 10px;
         }
     }
+    a.active {
+        border-bottom: 4px solid $accent-color;
+    }
 }
 
-.app-siderbar{
-  display: none;
-  width:300px;
-  height:100vh;
-  background-color: $primary-color;
-}
-
-@media ( min-width: 800px){
-  .app-warp{
-    /* 覆盖 direction*/
-    flex-direction: row;
-  }
-
-  .app-header , .app-footer{
+.app-sidebar {
     display: none;
-  }
-  .app-siderbar{
-    display: block;
-  }
+    width: 300px;
+    height: 100vh;
+    flex-shrink: 0;
+    background-color: $primary-color;
+    a.active {
+        color: $primary-color-text;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+        margin: 0;
+        text-align: center;
+        padding: 20px;
+        color: $primary-color-text;
+        border-bottom: 2px solid #fff59d;
+    }
+    a {
+        display: flex;
+        padding: 20px;
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.5);
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+    i {
+        color: $primary-color-text;
+        text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+@media ( min-width: 800px) {
+    .app-warp {
+        /* 覆盖 direction*/
+        flex-direction: row;
+    }
+    .app-header,
+    .app-footer {
+        display: none;
+    }
+    .app-sidebar {
+        display: flex;
+        flex-direction: column;
+    }
 }
