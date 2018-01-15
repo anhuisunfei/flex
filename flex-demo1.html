@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .app {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex-grow: 1;
+      background-color: #2196F3;
+      color: #FFFFFF;
+      display: flex;
+    }
+
+    .col-1,
+    .col-2,
+    .col-3 {
+      padding: 20px;
+    }
+
+    .col-2,
+    .col-3 {
+      width: 120px;
+    }
+
+    .col-1 {
+      background-color: #7B1FA2;
+      flex-grow: 1;
+      /*撑满*/
+    }
+
+
+    .col-2 {
+      background-color: #C2185B;
+      order: -1;
+      /*排序*/
+    }
+
+    .col-3 {
+      background-color: #303F9F;
+    }
+
+    .header,
+    .footer {
+      background-color: #1976D2;
+      color: #FFFFFF;
+      padding: 20px;
+    }
+
+    @media(max-width:600px){
+      .main{
+        flex-direction: column;
+      }
+      .col-2,
+      .col-3{
+        width:auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+
+    <div class="header">Header</div>
+    <div class="main">
+      <div class="col-1">主体内容</div>
+      <div class="col-2">导航栏</div>
+      <div class="col-3">侧边栏</div>
+    </div>
+    <div class="footer">Footer</div>
+  </div>
+</body>
+
+</html>
