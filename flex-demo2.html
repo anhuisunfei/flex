@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      padding-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      background-color: goldenrod;
+      height: 200px;
+      margin: 0 20px 40px;
+      flex-basis: 100%;
+    }
+    @media(min-width:600px){
+      .box{
+        flex-basis: calc(50% - 40px);
+      }
+    }
+
+    @media(min-width:900px){
+      .box{
+        flex-basis: calc(33.333% - 40px);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</body>
+
+</html>
